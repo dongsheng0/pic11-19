@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin:0; padding:0;}
+	body{ background: #000;}
+	.box{ width:200px; height:133px; margin:50px auto; position: relative;
+		-webkit-transform-style:preserve-3d;
+		-webkit-transform:perspective(800px) rotateX(-20deg);
+
+	}
+	.box img{ position: absolute; left：0; top:0;-webkit-transition:2s all ease;}
+
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox=document.body.children[0];
+			var aImg=oBox.children;
+			var i=aImg.length-1;
+			document.onclick=function(){
+				var timer=setInterval(function(){
+					aImg[i].style.WebkitTransform='rotateY('+i*360/aImg.length+'deg) translateZ(300px) ';
+					i--;
+					if(i<0){
+						clearInterval(timer);
+					}
+				},100);
+				
+			};
+			
+		};
+	</script>
+</head>
+<body>
+	<div class="box">
+		<img src="img/1.jpg" height="200" width="133" alt="">
+		<img src="img/2.jpg" height="200" width="133" alt="">
+		<img src="img/3.jpg" height="200" width="133" alt="">
+		<img src="img/4.jpg" height="200" width="133" alt="">
+		<img src="img/5.jpg" height="200" width="133" alt="">
+		<img src="img/6.jpg" height="200" width="133" alt="">
+		<img src="img/7.jpg" height="200" width="133" alt="">
+		<img src="img/8.jpg" height="200" width="133" alt="">
+		<img src="img/9.jpg" height="200" width="133" alt="">
+		<img src="img/10.jpg" height="200" width="133" alt="">
+		<img src="img/11.jpg" height="200" width="133" alt="">
+
+	</div>
+</body>
+</html>
